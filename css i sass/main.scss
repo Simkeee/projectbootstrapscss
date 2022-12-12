@@ -1,0 +1,186 @@
+$Greenish-color: #18bc9c;
+$Blueish-color: #2c3e50;
+$Contact-color: #495057;
+$w-color: white;
+
+@mixin flex() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin colgroup($bgcol,$color) {
+  background-color: $bgcol;
+  color: $color;
+}
+
+@mixin decoration($bgcol) {
+  width: 50%;
+  margin-bottom: 10px;
+  @include flex();
+  .left-line {
+    height: 5px;
+    width: 100%;
+    background-color:$bgcol;
+  }
+  .star{
+    margin: 0 10px;
+    .fa {
+        font: normal normal normal 170% FontAwesome;
+    }
+  }
+  .right-line {
+    height: 5px;
+    width: 100%;
+    background-color:$bgcol;
+  }
+}
+
+body {
+  * {
+    padding: 0;
+    margin: 0;
+    font-family:Arial;
+  }
+  .container-fluid {
+  @include colgroup($Blueish-color,$w-color);
+        .navbar-brand{
+            color:$w-color;    
+        }
+        #menu1{
+          display: none;
+        }
+        .dropdown{
+          display: flex;
+          justify-content: flex-end;
+          .btn{
+            gap: 5px;
+            @include colgroup($Greenish-color,$w-color);
+            border-radius: 20%;
+          }
+        }
+  
+    .decor {
+         @include decoration($w-color);
+    }
+  }
+#cont-sec{
+  @include colgroup($Greenish-color,$w-color);
+  @include flex();
+  flex-direction: column;
+  img{
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+}
+#cont-th{
+  @include colgroup($w-color,$Blueish-color);
+  @include flex();
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 10px;
+  .decor {
+    @include decoration($Blueish-color);
+}
+img{
+  width: 100%;
+  height: 30%;
+  padding: 5px;
+}
+}
+#cont-fou{
+  @include colgroup($Greenish-color,$w-color);
+  @include flex();
+  flex-direction: column;
+  margin-top: 10px;
+  .btn{
+    border: 1px solid white;
+    color: $w-color;
+    margin-bottom: 10px;
+  }
+  .fa{
+    color: $w-color;
+    padding: 5px;
+  }
+}
+#cont-five{
+  @include colgroup($w-color,$Blueish-color);
+  @include flex();
+  flex-direction: column;
+  .decor {
+    @include decoration($Blueish-color);
+}
+}
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content:flex-start;
+  gap: 10px;
+  margin-left: 10px;
+  .btn{
+    @include colgroup($Greenish-color,$w-color);
+  }
+}
+#cont-six{
+    text-align: center;
+    @include colgroup($Blueish-color,$w-color);
+    padding: 40px 10px;
+    margin-top: 10px;
+    .row{
+      @include flex();
+      flex-direction: column;
+      .col-4{
+      padding: 1%;
+      margin-bottom: 10px;
+      }
+    }
+    #icons{
+      font-size: large;
+    }
+}
+}
+@media only screen and (min-width: 600px){
+  #cont-th {
+    flex-direction: row;
+    flex-wrap: wrap;
+  #images{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    img {
+      width: 49%;
+      height: 50%;
+      padding: 5px;
+    }
+  }
+  }
+  #cont-six{
+    #row11{
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+}
+@media only screen and (min-width: 768px) {
+  .container-fluid {
+    #menu1{
+          display: initial;
+          color: white;
+        }
+        .btn{
+            display: none;
+        }
+}
+#cont-th {
+#images{
+  img {
+    width: 33%;
+    height: 50%;
+    padding: 5px;
+  }
+}
+}
+}
